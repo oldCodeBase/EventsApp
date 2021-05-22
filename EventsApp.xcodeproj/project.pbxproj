@@ -16,6 +16,8 @@
 		12288558265985E100D07DAB /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12288557265985E100D07DAB /* EventListViewController.swift */; };
 		1228855C26598C2400D07DAB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1228855B26598C2400D07DAB /* UIColor+Extensions.swift */; };
 		1228855E26598C3200D07DAB /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1228855D26598C3200D07DAB /* UIImage+Extensions.swift */; };
+		122885632659918600D07DAB /* EventsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 122885612659918600D07DAB /* EventsApp.xcdatamodeld */; };
+		122885652659925000D07DAB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122885642659925000D07DAB /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		12288557265985E100D07DAB /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		1228855B26598C2400D07DAB /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		1228855D26598C3200D07DAB /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		122885622659918600D07DAB /* EventsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsApp.xcdatamodel; sourceTree = "<group>"; };
+		122885642659925000D07DAB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				12288560265990C200D07DAB /* Controllers */,
 				1228855A26598C0A00D07DAB /* Extensions */,
 				1228855926598A1600D07DAB /* Supporting files */,
+				122885612659918600D07DAB /* EventsApp.xcdatamodeld */,
+				122885642659925000D07DAB /* CoreDataManager.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -181,7 +187,9 @@
 				1228855C26598C2400D07DAB /* UIColor+Extensions.swift in Sources */,
 				12288558265985E100D07DAB /* EventListViewController.swift in Sources */,
 				1228855E26598C3200D07DAB /* UIImage+Extensions.swift in Sources */,
+				122885632659918600D07DAB /* EventsApp.xcdatamodeld in Sources */,
 				122885402659827300D07DAB /* AppDelegate.swift in Sources */,
+				122885652659925000D07DAB /* CoreDataManager.swift in Sources */,
 				122885422659827300D07DAB /* SceneDelegate.swift in Sources */,
 				122885562659856E00D07DAB /* EventListCoordinator.swift in Sources */,
 			);
@@ -377,6 +385,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		122885612659918600D07DAB /* EventsApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				122885622659918600D07DAB /* EventsApp.xcdatamodel */,
+			);
+			currentVersion = 122885622659918600D07DAB /* EventsApp.xcdatamodel */;
+			name = EventsApp.xcdatamodeld;
+			path = ../../../../EventsApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 122885342659827300D07DAB /* Project object */;
 }
