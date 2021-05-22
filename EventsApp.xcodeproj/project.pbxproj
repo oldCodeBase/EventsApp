@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		122885402659827300D07DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1228853F2659827300D07DAB /* AppDelegate.swift */; };
 		122885422659827300D07DAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122885412659827300D07DAB /* SceneDelegate.swift */; };
-		122885442659827300D07DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122885432659827300D07DAB /* ViewController.swift */; };
-		122885472659827300D07DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122885452659827300D07DAB /* Main.storyboard */; };
 		122885492659827800D07DAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122885482659827800D07DAB /* Assets.xcassets */; };
 		1228854C2659827800D07DAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1228854A2659827800D07DAB /* LaunchScreen.storyboard */; };
+		12288554265982AD00D07DAB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12288553265982AD00D07DAB /* AppCoordinator.swift */; };
+		122885562659856E00D07DAB /* EventListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122885552659856E00D07DAB /* EventListCoordinator.swift */; };
+		12288558265985E100D07DAB /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12288557265985E100D07DAB /* EventListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1228853C2659827300D07DAB /* EventsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1228853F2659827300D07DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		122885412659827300D07DAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		122885432659827300D07DAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		122885462659827300D07DAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		122885482659827800D07DAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1228854B2659827800D07DAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1228854D2659827800D07DAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12288553265982AD00D07DAB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		122885552659856E00D07DAB /* EventListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCoordinator.swift; sourceTree = "<group>"; };
+		12288557265985E100D07DAB /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				1228853F2659827300D07DAB /* AppDelegate.swift */,
 				122885412659827300D07DAB /* SceneDelegate.swift */,
-				122885432659827300D07DAB /* ViewController.swift */,
-				122885452659827300D07DAB /* Main.storyboard */,
+				12288553265982AD00D07DAB /* AppCoordinator.swift */,
+				122885552659856E00D07DAB /* EventListCoordinator.swift */,
+				12288557265985E100D07DAB /* EventListViewController.swift */,
 				122885482659827800D07DAB /* Assets.xcassets */,
 				1228854A2659827800D07DAB /* LaunchScreen.storyboard */,
 				1228854D2659827800D07DAB /* Info.plist */,
@@ -126,7 +129,6 @@
 			files = (
 				1228854C2659827800D07DAB /* LaunchScreen.storyboard in Resources */,
 				122885492659827800D07DAB /* Assets.xcassets in Resources */,
-				122885472659827300D07DAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +139,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				122885442659827300D07DAB /* ViewController.swift in Sources */,
+				12288554265982AD00D07DAB /* AppCoordinator.swift in Sources */,
+				12288558265985E100D07DAB /* EventListViewController.swift in Sources */,
 				122885402659827300D07DAB /* AppDelegate.swift in Sources */,
 				122885422659827300D07DAB /* SceneDelegate.swift in Sources */,
+				122885562659856E00D07DAB /* EventListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		122885452659827300D07DAB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				122885462659827300D07DAB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1228854A2659827800D07DAB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +292,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = che.tech.EventsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = che.tech.EventsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
