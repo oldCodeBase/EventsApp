@@ -58,16 +58,24 @@
 		1228853E2659827300D07DAB /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
-				1228853F2659827300D07DAB /* AppDelegate.swift */,
+				1228855926598A1600D07DAB /* Supporting files */,
 				122885412659827300D07DAB /* SceneDelegate.swift */,
 				12288553265982AD00D07DAB /* AppCoordinator.swift */,
 				122885552659856E00D07DAB /* EventListCoordinator.swift */,
 				12288557265985E100D07DAB /* EventListViewController.swift */,
+			);
+			path = EventsApp;
+			sourceTree = "<group>";
+		};
+		1228855926598A1600D07DAB /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				1228853F2659827300D07DAB /* AppDelegate.swift */,
 				122885482659827800D07DAB /* Assets.xcassets */,
 				1228854A2659827800D07DAB /* LaunchScreen.storyboard */,
 				1228854D2659827800D07DAB /* Info.plist */,
 			);
-			path = EventsApp;
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +292,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8FT674V95S;
-				INFOPLIST_FILE = EventsApp/Info.plist;
+				INFOPLIST_FILE = "EventsApp/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,7 +311,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8FT674V95S;
-				INFOPLIST_FILE = EventsApp/Info.plist;
+				INFOPLIST_FILE = "EventsApp/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
