@@ -62,11 +62,10 @@
 		1228853E2659827300D07DAB /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
-				1228855A26598C0A00D07DAB /* Extensions */,
 				122885412659827300D07DAB /* SceneDelegate.swift */,
-				12288553265982AD00D07DAB /* AppCoordinator.swift */,
-				122885552659856E00D07DAB /* EventListCoordinator.swift */,
-				12288557265985E100D07DAB /* EventListViewController.swift */,
+				1228855F265990AA00D07DAB /* Coordinators */,
+				12288560265990C200D07DAB /* Controllers */,
+				1228855A26598C0A00D07DAB /* Extensions */,
 				1228855926598A1600D07DAB /* Supporting files */,
 			);
 			path = EventsApp;
@@ -90,6 +89,23 @@
 				1228855D26598C3200D07DAB /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1228855F265990AA00D07DAB /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				12288553265982AD00D07DAB /* AppCoordinator.swift */,
+				122885552659856E00D07DAB /* EventListCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		12288560265990C200D07DAB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12288557265985E100D07DAB /* EventListViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
