@@ -68,11 +68,11 @@
 			children = (
 				122885412659827300D07DAB /* SceneDelegate.swift */,
 				1228855F265990AA00D07DAB /* Coordinators */,
+				1228856626599A8000D07DAB /* Managers */,
 				12288560265990C200D07DAB /* Controllers */,
 				1228855A26598C0A00D07DAB /* Extensions */,
 				1228855926598A1600D07DAB /* Supporting files */,
 				122885612659918600D07DAB /* EventsApp.xcdatamodeld */,
-				122885642659925000D07DAB /* CoreDataManager.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -112,6 +112,14 @@
 				12288557265985E100D07DAB /* EventListViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1228856626599A8000D07DAB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				122885642659925000D07DAB /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
