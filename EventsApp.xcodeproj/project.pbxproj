@@ -77,12 +77,11 @@
 				122885412659827300D07DAB /* SceneDelegate.swift */,
 				1228855F265990AA00D07DAB /* Coordinators */,
 				1228856626599A8000D07DAB /* Managers */,
+				1290AE6E265A420F008DCC4D /* ViewModels */,
 				12288560265990C200D07DAB /* Controllers */,
 				1228855A26598C0A00D07DAB /* Extensions */,
 				1228855926598A1600D07DAB /* Supporting files */,
 				122885612659918600D07DAB /* EventsApp.xcdatamodeld */,
-				1290AE66265A3449008DCC4D /* EventListViewModel.swift */,
-				1290AE6C265A3A3F008DCC4D /* AddEventViewModel.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -132,6 +131,15 @@
 				122885642659925000D07DAB /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		1290AE6E265A420F008DCC4D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1290AE66265A3449008DCC4D /* EventListViewModel.swift */,
+				1290AE6C265A3A3F008DCC4D /* AddEventViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
