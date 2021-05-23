@@ -84,13 +84,13 @@
 			children = (
 				122885412659827300D07DAB /* SceneDelegate.swift */,
 				1228855F265990AA00D07DAB /* Coordinators */,
-				1228856626599A8000D07DAB /* Managers */,
 				1290AE6E265A420F008DCC4D /* ViewModels */,
 				12288560265990C200D07DAB /* Controllers */,
+				1290AE77265B03FB008DCC4D /* Views */,
+				1228856626599A8000D07DAB /* Managers */,
 				1228855A26598C0A00D07DAB /* Extensions */,
 				1228855926598A1600D07DAB /* Supporting files */,
 				122885612659918600D07DAB /* EventsApp.xcdatamodeld */,
-				1290AE6F265A472F008DCC4D /* NewEventCell.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -152,6 +152,14 @@
 				1290AE71265A4A38008DCC4D /* NewEventCellViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1290AE77265B03FB008DCC4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1290AE6F265A472F008DCC4D /* NewEventCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
