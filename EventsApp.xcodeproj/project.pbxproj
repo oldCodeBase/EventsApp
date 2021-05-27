@@ -26,6 +26,7 @@
 		1290AE72265A4A38008DCC4D /* NewEventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1290AE71265A4A38008DCC4D /* NewEventCellViewModel.swift */; };
 		1290AE74265A7FAB008DCC4D /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1290AE73265A7FAB008DCC4D /* Date+Extensions.swift */; };
 		1290AE76265AF91F008DCC4D /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1290AE75265AF91F008DCC4D /* ImagePickerCoordinator.swift */; };
+		12DBFC13265EDFA700BFBE80 /* EventCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DBFC12265EDFA700BFBE80 /* EventCellBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		1290AE71265A4A38008DCC4D /* NewEventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventCellViewModel.swift; sourceTree = "<group>"; };
 		1290AE73265A7FAB008DCC4D /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		1290AE75265AF91F008DCC4D /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		12DBFC12265EDFA700BFBE80 /* EventCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				1228855A26598C0A00D07DAB /* Extensions */,
 				1228855926598A1600D07DAB /* Supporting files */,
 				122885612659918600D07DAB /* EventsApp.xcdatamodeld */,
+				12DBFC12265EDFA700BFBE80 /* EventCellBuilder.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				1290AE6D265A3A3F008DCC4D /* AddEventViewModel.swift in Sources */,
 				1290AE70265A472F008DCC4D /* NewEventCell.swift in Sources */,
 				12288558265985E100D07DAB /* EventListViewController.swift in Sources */,
+				12DBFC13265EDFA700BFBE80 /* EventCellBuilder.swift in Sources */,
 				1290AE72265A4A38008DCC4D /* NewEventCellViewModel.swift in Sources */,
 				1228855E26598C3200D07DAB /* UIImage+Extensions.swift in Sources */,
 				1290AE76265AF91F008DCC4D /* ImagePickerCoordinator.swift in Sources */,
