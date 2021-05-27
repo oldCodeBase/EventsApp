@@ -20,7 +20,8 @@ final class AddEventCoordinator: Coordinator {
     }
     
     func start() {
-        let addEventViewModel            = AddEventViewModel()
+        let addEventViewModel            = AddEventViewModel(cellBuilder: EventCellBuilder(),
+                                                             coreDataManager: CoreDataManager())
         let addEventViewController       = AddEventViewController()
         addEventViewModel.coordinator    = self
         addEventViewController.viewModel = addEventViewModel
@@ -30,8 +31,12 @@ final class AddEventCoordinator: Coordinator {
         }
     }
     
-    func didFinishAddEvent() {
+    func didFinish() {
         parentCoordinator?.childDidFinish(self)
+    }
+    
+    func didFinishSaveEvent() {
+        navigationController.dismiss(animated: true)
     }
     
     func showImagePicker(completion: @escaping (UIImage) -> Void) {
