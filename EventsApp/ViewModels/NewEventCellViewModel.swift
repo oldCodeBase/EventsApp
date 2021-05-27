@@ -16,9 +16,9 @@ final class NewEventCellViewModel {
     let placeholder: String
     private(set) var image: UIImage?
     private(set) var subtitle: String
-    private(set) var onCellUpdate: () -> Void = {}
+    private(set) var onCellUpdate: (() -> Void?)
     
-    init(title: String, subtitle: String, placeholder: String, type: CellType, onUpdate: @escaping () -> Void) {
+    init(title: String, subtitle: String, placeholder: String, type: CellType, onUpdate: (() -> Void)?) {
         self.title        = title
         self.subtitle     = subtitle
         self.placeholder  = placeholder
