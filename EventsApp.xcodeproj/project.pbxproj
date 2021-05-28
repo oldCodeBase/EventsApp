@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121CEFB42661859B00BF2925 /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121CEFB32661859B00BF2925 /* EventCellViewModel.swift */; };
+		121CEFB62661871D00BF2925 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121CEFB52661871D00BF2925 /* EventCell.swift */; };
+		121CEFB826618B3000BF2925 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121CEFB726618B3000BF2925 /* UIView+Extensions.swift */; };
 		122885402659827300D07DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1228853F2659827300D07DAB /* AppDelegate.swift */; };
 		122885422659827300D07DAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122885412659827300D07DAB /* SceneDelegate.swift */; };
 		122885492659827800D07DAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122885482659827800D07DAB /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121CEFB32661859B00BF2925 /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
+		121CEFB52661871D00BF2925 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		121CEFB726618B3000BF2925 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		1228853C2659827300D07DAB /* EventsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1228853F2659827300D07DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		122885412659827300D07DAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 				1228855B26598C2400D07DAB /* UIColor+Extensions.swift */,
 				1228855D26598C3200D07DAB /* UIImage+Extensions.swift */,
 				1290AE73265A7FAB008DCC4D /* Date+Extensions.swift */,
+				121CEFB726618B3000BF2925 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 				1290AE66265A3449008DCC4D /* EventListViewModel.swift */,
 				1290AE6C265A3A3F008DCC4D /* AddEventViewModel.swift */,
 				1290AE71265A4A38008DCC4D /* NewEventCellViewModel.swift */,
+				121CEFB32661859B00BF2925 /* EventCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				1290AE6F265A472F008DCC4D /* NewEventCell.swift */,
+				121CEFB52661871D00BF2925 /* EventCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121CEFB826618B3000BF2925 /* UIView+Extensions.swift in Sources */,
 				12288554265982AD00D07DAB /* AppCoordinator.swift in Sources */,
 				1290AE6B265A3918008DCC4D /* AddEventViewController.swift in Sources */,
 				1228855C26598C2400D07DAB /* UIColor+Extensions.swift in Sources */,
@@ -242,9 +252,11 @@
 				12288558265985E100D07DAB /* EventListViewController.swift in Sources */,
 				12DBFC13265EDFA700BFBE80 /* EventCellBuilder.swift in Sources */,
 				1290AE72265A4A38008DCC4D /* NewEventCellViewModel.swift in Sources */,
+				121CEFB42661859B00BF2925 /* EventCellViewModel.swift in Sources */,
 				1228855E26598C3200D07DAB /* UIImage+Extensions.swift in Sources */,
 				1290AE76265AF91F008DCC4D /* ImagePickerCoordinator.swift in Sources */,
 				122885632659918600D07DAB /* EventsApp.xcdatamodeld in Sources */,
+				121CEFB62661871D00BF2925 /* EventCell.swift in Sources */,
 				1290AE74265A7FAB008DCC4D /* Date+Extensions.swift in Sources */,
 				122885402659827300D07DAB /* AppDelegate.swift in Sources */,
 				122885652659925000D07DAB /* CoreDataManager.swift in Sources */,
