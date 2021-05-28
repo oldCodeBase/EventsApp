@@ -16,7 +16,7 @@ final class NewEventCellViewModel {
     let placeholder: String
     private(set) var image: UIImage?
     private(set) var subtitle: String
-    private(set) var onCellUpdate: (() -> Void?)
+    private(set) var onCellUpdate: (() -> Void)?
     
     init(title: String, subtitle: String, placeholder: String, type: CellType, onUpdate: (() -> Void)?) {
         self.title        = title
@@ -33,11 +33,11 @@ final class NewEventCellViewModel {
     func update(_ date: Date) {
         let stringDate = date.convertDate()
         self.subtitle = stringDate
-        onCellUpdate()
+        onCellUpdate?()
     }
     
     func update(_ image: UIImage) {
         self.image = image
-        onCellUpdate()
+        onCellUpdate?()
     }
 }
