@@ -35,12 +35,13 @@ final class EventCell: UITableViewCell {
         
         [yearLabel, monthLabel, weekLabel, dayLabel, dateLabel].forEach {
             $0.font = .systemFont(ofSize: 22, weight: .medium)
-            $0.textColor = .label
+            $0.textColor = .white
         }
         
         eventNameLabel.font      = .systemFont(ofSize: 28, weight: .bold)
         eventNameLabel.textColor = .label
         verticalStack.axis       = .vertical
+        verticalStack.alignment  = .trailing
         
         [yearLabel, monthLabel, weekLabel, dayLabel, dateLabel].forEach {
             verticalStack.addArrangedSubview($0)
@@ -50,6 +51,7 @@ final class EventCell: UITableViewCell {
     }
     
     private func setupLayout() {
+        backgroundImage.heightAnchor.constraint(equalToConstant: 250).isActive = true
         backgroundImage.pinToSuperviewEdges()
         verticalStack.pinToSuperviewEdges([.top, .right, .bottom], constant: 15)
         eventNameLabel.pinToSuperviewEdges([.left, .bottom], constant: 15)
