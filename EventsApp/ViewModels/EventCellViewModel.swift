@@ -34,6 +34,6 @@ struct EventCellViewModel {
     }
     
     var backgroundImage: UIImage {
-        UIImage(systemName: "person")!
+        UIImage(named: "maldives")!
     }
 }
