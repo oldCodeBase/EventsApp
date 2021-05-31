@@ -9,31 +9,40 @@ import UIKit
 
 struct EventCellViewModel {
     
-    var yearText: String {
-        "1 year"
+    private let date = Date()
+    private let event: Event
+    private static let imageCache = NSCache<NSString, UIImage>()
+    private var cacheKey: String { event.objectID.description }
+    
+    var timeRemaningStrings: [String] {
+        guard let eventDate = event.date else { return [] }
+        return date.timeRemaining(until: eventDate)?.components(separatedBy: ",") ?? []
     }
     
-    var monthText: String {
-        "2 months"
+    var dateText: String? {
+        guard let date = event.date else { return nil }
+        return date.convertDate()
     }
     
-    var weakText: String {
-        "3 weeks"
+    var eventText: String? {
+        event.name
     }
     
-    var dayText: String {
-        "6 days"
+    init(_ event: Event) {
+        self.event = event
     }
     
-    var dateText: String {
-        "19 March 2021"
-    }
-    
-    var eventText: String {
-        "Grozny"
-    }
-    
-    var backgroundImage: UIImage {
-        UIImage(named: "maldives")!
+    func loadImage(completion: (UIImage?) -> Void) {
+        if let image = Self.imageCache.object(forKey: cacheKey as NSString) {
+            completion(image)
+        } else {
+            guard let imageData = event.image, let image = UIImage(data: imageData) else {
+                completion(nil)
+                return
+            }
+            
+            Self.imageCache.setObject(image, forKey: cacheKey as NSString)
+            completion(image)
+        }
     }
 }
