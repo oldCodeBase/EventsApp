@@ -12,6 +12,7 @@ struct EventCellViewModel {
     private let date = Date()
     private let event: Event
     private static let imageCache = NSCache<NSString, UIImage>()
+    private let imageQueue = DispatchQueue(label: "imageQueue", qos: .background)
     private var cacheKey: String { event.objectID.description }
     
     var timeRemaningStrings: [String] {
@@ -32,17 +33,19 @@ struct EventCellViewModel {
         self.event = event
     }
     
-    func loadImage(completion: (UIImage?) -> Void) {
+    func loadImage(completion: @escaping (UIImage?) -> Void) {
         if let image = Self.imageCache.object(forKey: cacheKey as NSString) {
             completion(image)
         } else {
-            guard let imageData = event.image, let image = UIImage(data: imageData) else {
-                completion(nil)
-                return
+            imageQueue.async {
+                guard let imageData = self.event.image, let image = UIImage(data: imageData) else {
+                    completion(nil)
+                    return
+                }
+                
+                Self.imageCache.setObject(image, forKey: self.cacheKey as NSString)
+                DispatchQueue.main.async { completion(image) }
             }
-            
-            Self.imageCache.setObject(image, forKey: cacheKey as NSString)
-            completion(image)
         }
     }
 }

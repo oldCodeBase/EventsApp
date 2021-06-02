@@ -61,6 +61,6 @@ final class EventCell: UITableViewCell {
         }
         dateLabel.text        = viewModel.dateText
         eventNameLabel.text   = viewModel.eventText
-        viewModel.loadImage { backgroundImage.image = $0 }
+        viewModel.loadImage { self.backgroundImage.image = $0 }
     }
 }
