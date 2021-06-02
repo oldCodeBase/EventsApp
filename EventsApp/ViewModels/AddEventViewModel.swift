@@ -25,10 +25,11 @@ final class AddEventViewModel {
     private let coreDataManager: CoreDataManager
     lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
         return dateFormatter
     }()
     
-    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager) {
+    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
         self.eventCellBuilder = cellBuilder
         self.coreDataManager = coreDataManager
     }
@@ -55,7 +56,10 @@ final class AddEventViewModel {
               let dateString = dateNewEventCellViewModel?.subtitle,
               let image = imageNewEventCellViewModel?.image,
               let date = dateFormatter.date(from: dateString)
-        else { return }
+        else {
+            return
+        }
+        
         coreDataManager.saveEvent(name: name, date: date, image: image)
         coordinator?.didFinishSaveEvent()
     }
@@ -83,9 +87,9 @@ final class AddEventViewModel {
 }
 
 private extension AddEventViewModel {
+    
     func setupCells() {
         nameNewEventCellViewModel = eventCellBuilder.makeNewEventCellViewModel(.text)
-        
         dateNewEventCellViewModel = eventCellBuilder.makeNewEventCellViewModel(.date) { [weak self] in
             self?.onUpdate()
         }
