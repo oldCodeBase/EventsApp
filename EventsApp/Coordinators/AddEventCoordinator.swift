@@ -20,8 +20,7 @@ final class AddEventCoordinator: Coordinator {
     }
     
     func start() {
-        let addEventViewModel            = AddEventViewModel(cellBuilder: EventCellBuilder(),
-                                                             coreDataManager: CoreDataManager())
+        let addEventViewModel            = AddEventViewModel(cellBuilder: EventCellBuilder())
         let addEventViewController       = AddEventViewController()
         addEventViewModel.coordinator    = self
         addEventViewController.viewModel = addEventViewModel
@@ -36,6 +35,7 @@ final class AddEventCoordinator: Coordinator {
     }
     
     func didFinishSaveEvent() {
+        parentCoordinator?.onSaveEvent()
         navigationController.dismiss(animated: true)
     }
     
