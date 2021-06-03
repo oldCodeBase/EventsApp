@@ -15,7 +15,7 @@ final class EventListViewModel {
     enum Cell { case event(EventCellViewModel) }
     private(set) var cells: [Cell] = []
     private let coreDataManager: CoreDataManager
-    init(coreDataManager: CoreDataManager = CoreDataManager.shared) {
+    init(coreDataManager: CoreDataManager = .shared) {
         self.coreDataManager = coreDataManager
     }
     func viewDidLoad() {
@@ -36,7 +36,20 @@ final class EventListViewModel {
     
     func reload() {
         let events = coreDataManager.fetchEvents()
-        cells = events.map { .event(EventCellViewModel($0)) }
+        cells = events.map {
+            var evenCellViewModel = EventCellViewModel($0)
+            if let coordinator = coordinator {
+                evenCellViewModel.onSelect = coordinator.onSelect
+            }
+            return .event(evenCellViewModel)
+        }
         onUpdate()
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        switch cells[indexPath.row] {
+        case .event(let eventCellViewModel):
+            eventCellViewModel.didSelect()
+        }
     }
 }
