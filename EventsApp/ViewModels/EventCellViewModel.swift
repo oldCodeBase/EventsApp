@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct EventCellViewModel {
     
@@ -14,6 +15,7 @@ struct EventCellViewModel {
     private static let imageCache = NSCache<NSString, UIImage>()
     private let imageQueue = DispatchQueue(label: "imageQueue", qos: .background)
     private var cacheKey: String { event.objectID.description }
+    var onSelect: (NSManagedObjectID) -> Void = { _ in }
     
     var timeRemaningStrings: [String] {
         guard let eventDate = event.date else { return [] }
@@ -47,5 +49,9 @@ struct EventCellViewModel {
                 DispatchQueue.main.async { completion(image) }
             }
         }
+    }
+    
+    func didSelect() {
+        onSelect(event.objectID)
     }
 }
