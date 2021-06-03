@@ -17,7 +17,7 @@ final class AddEventViewModel {
     }
     
     private(set) var cells: [AddEventViewModel.Cell] = []
-    var coordinator: AddEventCoordinator?
+    weak var coordinator: AddEventCoordinator?
     private var nameNewEventCellViewModel: NewEventCellViewModel?
     private var dateNewEventCellViewModel: NewEventCellViewModel?
     private var imageNewEventCellViewModel: NewEventCellViewModel?
@@ -29,7 +29,7 @@ final class AddEventViewModel {
         return dateFormatter
     }()
     
-    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
+    init(cellBuilder: EventCellBuilder, coreDataManager: CoreDataManager = .shared) {
         self.eventCellBuilder = cellBuilder
         self.coreDataManager = coreDataManager
     }
