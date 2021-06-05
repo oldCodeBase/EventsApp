@@ -31,6 +31,17 @@ struct EventCellViewModel {
         event.name
     }
     
+    var timeRemainingViewModel: TimeRemainingViewModel? {
+        guard
+            let eventDate = event.date,
+            let timeRemainingParts = date.timeRemaining(until: eventDate)?.components(separatedBy: ",")
+        else {
+            return nil
+        }
+        
+        return TimeRemainingViewModel(timeRemainingParts: timeRemainingParts, mode: .cell)
+    }
+    
     init(_ event: Event) {
         self.event = event
     }
