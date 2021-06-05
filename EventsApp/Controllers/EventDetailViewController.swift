@@ -10,24 +10,45 @@ import UIKit
 final class EventDetailViewController: UIViewController {
     
     private let backgroundImage = UIImageView()
+    private var timeRemainingStackView = TimeRemainingStackView()
     var viewModel: EventDetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.onUpdate = { [weak self] in self?.backgroundImage.image = self?.viewModel.image }
-        viewModel.viewDidLoad()
+        updateViewModel()
         setupViews()
         setupLayout()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear()
     }
     
     private func setupViews() {
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         backgroundImage.contentMode = .scaleAspectFill
         view.addSubviews(backgroundImage)
+        view.addSubviews(timeRemainingStackView)
     }
     
     private func setupLayout() {
         backgroundImage.pinToSuperviewEdges()
+        timeRemainingStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        timeRemainingStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+    }
+    
+    private func updateViewModel() {
+        viewModel.onUpdate = { [weak self] in
+            guard let self = self,
+                  let timeRemainingViewModel = self.viewModel.timeRemainingViewModel
+            else { return }
+            self.backgroundImage.image = self.viewModel.image
+            self.timeRemainingStackView.update(with: timeRemainingViewModel)
+            self.timeRemainingStackView.setup()
+        }
+        viewModel.viewDidLoad()
     }
 }
