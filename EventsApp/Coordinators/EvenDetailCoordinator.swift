@@ -13,6 +13,7 @@ final class EvenDetailCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
     private let eventID: NSManagedObjectID
+    var parentCoordinator: EventListCoordinator?
     
     init(eventID: NSManagedObjectID, navigationController: UINavigationController) {
         self.eventID              = eventID
@@ -21,7 +22,13 @@ final class EvenDetailCoordinator: Coordinator {
     
     func start() {
         let eventDetailViewController = EventDetailViewController()
-        eventDetailViewController.viewModel = EventDetailViewModel.init(eventID: eventID)
+        let eventDetailViewModel = EventDetailViewModel.init(eventID: eventID)
+        eventDetailViewModel.coordinator = self
+        eventDetailViewController.viewModel = eventDetailViewModel
         navigationController.pushViewController(eventDetailViewController, animated: true)
+    }
+    
+    func didFinish() {
+        parentCoordinator?.childDidFinish(self)
     }
 }
