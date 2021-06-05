@@ -32,6 +32,8 @@
 		1290AE72265A4A38008DCC4D /* NewEventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1290AE71265A4A38008DCC4D /* NewEventCellViewModel.swift */; };
 		1290AE74265A7FAB008DCC4D /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1290AE73265A7FAB008DCC4D /* Date+Extensions.swift */; };
 		1290AE76265AF91F008DCC4D /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1290AE75265AF91F008DCC4D /* ImagePickerCoordinator.swift */; };
+		12CACAB1266C075B007785E4 /* TimeRemainingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CACAB0266C075B007785E4 /* TimeRemainingStackView.swift */; };
+		12CACAB3266C0824007785E4 /* TimeRemainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CACAB2266C0824007785E4 /* TimeRemainingViewModel.swift */; };
 		12DBFC13265EDFA700BFBE80 /* EventCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DBFC12265EDFA700BFBE80 /* EventCellBuilder.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		1290AE71265A4A38008DCC4D /* NewEventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventCellViewModel.swift; sourceTree = "<group>"; };
 		1290AE73265A7FAB008DCC4D /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		1290AE75265AF91F008DCC4D /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		12CACAB0266C075B007785E4 /* TimeRemainingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRemainingStackView.swift; sourceTree = "<group>"; };
+		12CACAB2266C0824007785E4 /* TimeRemainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRemainingViewModel.swift; sourceTree = "<group>"; };
 		12DBFC12265EDFA700BFBE80 /* EventCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +174,7 @@
 				1290AE71265A4A38008DCC4D /* NewEventCellViewModel.swift */,
 				121CEFB32661859B00BF2925 /* EventCellViewModel.swift */,
 				12702DE22669627F00049F70 /* EventDetailViewModel.swift */,
+				12CACAB2266C0824007785E4 /* TimeRemainingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			children = (
 				1290AE6F265A472F008DCC4D /* NewEventCell.swift */,
 				121CEFB52661871D00BF2925 /* EventCell.swift */,
+				12CACAB0266C075B007785E4 /* TimeRemainingStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				1290AE70265A472F008DCC4D /* NewEventCell.swift in Sources */,
 				12288558265985E100D07DAB /* EventListViewController.swift in Sources */,
 				12DBFC13265EDFA700BFBE80 /* EventCellBuilder.swift in Sources */,
+				12CACAB3266C0824007785E4 /* TimeRemainingViewModel.swift in Sources */,
 				1290AE72265A4A38008DCC4D /* NewEventCellViewModel.swift in Sources */,
 				121CEFB42661859B00BF2925 /* EventCellViewModel.swift in Sources */,
 				1228855E26598C3200D07DAB /* UIImage+Extensions.swift in Sources */,
@@ -275,6 +282,7 @@
 				122885422659827300D07DAB /* SceneDelegate.swift in Sources */,
 				12702DDF26695F7300049F70 /* EvenDetailCoordinator.swift in Sources */,
 				1290AE69265A3616008DCC4D /* AddEventCoordinator.swift in Sources */,
+				12CACAB1266C075B007785E4 /* TimeRemainingStackView.swift in Sources */,
 				122885562659856E00D07DAB /* EventListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
