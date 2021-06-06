@@ -15,8 +15,8 @@ final class AddEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureVC()
-        configureTableView()
+        setupVC()
+        setupTableView()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -24,7 +24,7 @@ final class AddEventViewController: UIViewController {
         viewModel.viewDidDisappear()
     }
     
-    private func configureVC() {
+    private func setupVC() {
         view.backgroundColor = .systemBackground
         viewModel.onUpdate = { [weak self] in self?.tableView.reloadData() }
         viewModel.viewDidLoad()
@@ -34,12 +34,9 @@ final class AddEventViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                             target: self,
                                                             action: #selector(tappedDone))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
-                                                           target: self,
-                                                           action: #selector(tappedClose))
     }
     
-    private func configureTableView() {
+    private func setupTableView() {
         view.addSubview(tableView)
         tableView.frame           = view.bounds
         tableView.delegate        = self
@@ -51,14 +48,10 @@ final class AddEventViewController: UIViewController {
     @objc private func tappedDone() {
         viewModel.tappedDone()
     }
-    
-    @objc private func tappedClose() {
-        viewModel.tappedClose()
-    }
 }
 
-//MARK: - UITableViewDataSource
-extension AddEventViewController: UITableViewDataSource, UITableViewDelegate {
+//MARK: - UITableViewDelegate
+extension AddEventViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRows()
@@ -67,13 +60,17 @@ extension AddEventViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellViewModel = viewModel.cell(for: indexPath)
         switch cellViewModel {
-        case .titleSubTitle(let titleSubTitleViewModel):
+        case .titleSubtitle(let addEventCellViewModel):
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewEventCellID", for: indexPath) as! NewEventCell
-            cell.update(with: titleSubTitleViewModel)
+            cell.update(with: addEventCellViewModel)
             cell.subtitleTextField.delegate = self
             return cell
         }
     }
+}
+
+//MARK: - UITableViewDataSource
+extension AddEventViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
