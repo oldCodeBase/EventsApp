@@ -16,6 +16,7 @@ final class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavController()
         updateViewModel()
         setupViews()
         setupLayout()
@@ -24,6 +25,13 @@ final class EventDetailViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewModel.viewDidDisappear()
+    }
+    
+    private func setupNavController() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "pencil"),
+                                                            style: .plain,
+                                                            target: viewModel,
+                                                            action: #selector(viewModel.editButtonTapped))
     }
     
     private func setupViews() {
