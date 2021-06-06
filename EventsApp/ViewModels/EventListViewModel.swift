@@ -10,16 +10,35 @@ import Foundation
 final class EventListViewModel {
     
     let title = "Events"
-    var onUpdate = {}
     var coordinator: EventListCoordinator?
-    enum Cell { case event(EventCellViewModel) }
-    private(set) var cells: [Cell] = []
-    private let coreDataManager: CoreDataManager
-    init(coreDataManager: CoreDataManager = .shared) {
-        self.coreDataManager = coreDataManager
+    var onUpdate = {}
+    
+    enum Cell {
+        case event(EventCellViewModel)
     }
+    
+    private(set) var cells: [Cell] = []
+    private let eventService: EventServiceProtocol
+    
+    init(eventService: EventServiceProtocol = EventService()) {
+        self.eventService = eventService
+    }
+    
     func viewDidLoad() {
         reload()
+    }
+    
+    func reload() {
+        EventCellViewModel.imageCache.removeAllObjects()
+        let events = eventService.getEvents()
+        cells = events.map {
+            var eventCellViewModel = EventCellViewModel($0)
+            if let coordinator = coordinator {
+                eventCellViewModel.onSelect = coordinator.onSelect
+            }
+            return .event(eventCellViewModel)
+        }
+        onUpdate()
     }
     
     func tappedAddEvent() {
@@ -32,18 +51,6 @@ final class EventListViewModel {
     
     func cell(at indexPath: IndexPath) -> Cell {
         return cells[indexPath.row]
-    }
-    
-    func reload() {
-        let events = coreDataManager.fetchEvents()
-        cells = events.map {
-            var evenCellViewModel = EventCellViewModel($0)
-            if let coordinator = coordinator {
-                evenCellViewModel.onSelect = coordinator.onSelect
-            }
-            return .event(evenCellViewModel)
-        }
-        onUpdate()
     }
     
     func didSelectRow(at indexPath: IndexPath) {
