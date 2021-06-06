@@ -12,7 +12,7 @@ struct EventCellViewModel {
     
     private let date = Date()
     private let event: Event
-    private static let imageCache = NSCache<NSString, UIImage>()
+    static let imageCache  = NSCache<NSString, UIImage>()
     private let imageQueue = DispatchQueue(label: "imageQueue", qos: .background)
     private var cacheKey: String { event.objectID.description }
     var onSelect: (NSManagedObjectID) -> Void = { _ in }
